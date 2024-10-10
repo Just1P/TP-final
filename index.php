@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require_once('./order/controller/IndexController.php');
 require_once('./order/controller/ProcessOrderCreateController.php');
@@ -8,6 +11,9 @@ require_once('./order/controller/ProcessShippingAddressController.php');
 require_once('./order/controller/ProcessShippingMethodController.php');
 require_once('./order/controller/SetShippingAddressController.php');
 require_once('./order/controller/SetShippingMethodController.php');
+require_once('./product/controller/CreateProductController.php');
+require_once('./product/controller/ProcessCreateProductController.php');
+require_once ('./product/controller/ListProductsController.php');
 
 // Récupère l'url actuelle et supprime le chemin de base
 // c'est à dire : http://localhost:8888/esd-oop-php/public/
@@ -40,31 +46,49 @@ if ($endUri === "pay") {
 
 
 if ($endUri === "process-payment") {
-    $payController = new ProcessPaymentController();
-    $payController->processPayment();
+    $processPaymentController = new ProcessPaymentController();
+    $processPaymentController->processPayment();
     return;
 }
 
 if ($endUri === "process-shipping-address") {
-    $payController = new ProcessShippingAddressController();
-    $payController->processShippingAddress();
+    $processShippingaddressController = new ProcessShippingAddressController();
+    $processShippingaddressController->processShippingAddress();
     return;
 }
 
 if ($endUri === "process-shipping-method") {
-    $payController = new ProcessShippingMethodController();
-    $payController->processShippingMethod();
+    $processShippingShippingMethodController = new ProcessShippingMethodController();
+    $processShippingShippingMethodController->processShippingMethod();
     return;
 }
 
 if ($endUri === "set-shipping-address") {
-    $payController = new SetShippingAddressController();
-    $payController->setShippingAddress();
+    $setShippingaddressController = new SetShippingAddressController();
+    $setShippingaddressController->setShippingAddress();
     return;
 }
 
 if ($endUri === "set-shipping-method") {
-    $payController = new SetShippingMethodController();
-    $payController->setShippingMethod();
+    $setShippingMethodController = new SetShippingMethodController();
+    $setShippingMethodController->setShippingMethod();
+    return;
+}
+
+if ($endUri === "process-create-product") {
+    $createProductController = new ProcessCreateProductController();
+    $createProductController->processCreateProduct();
+    return;
+}
+
+if ($endUri === "create-product") {
+    $createProductController = new CreateProductController();
+    $createProductController->createProduct();
+    return;
+}
+
+if ($endUri === "product-list") {
+    $listProductsController = new ListProductsController();
+    $listProductsController->showProductList();
     return;
 }

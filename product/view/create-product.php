@@ -1,6 +1,6 @@
 <?php require_once('./order/view/partials/header.php'); ?>
 
-<form action="CreateProduct.php" method="POST">
+<form action="http://localhost:8888/esd-oop-php/process-create-product" method="POST">
     <div>
         <label for="title">Titre :</label>
         <input type="text" id="title" name="title" required>
@@ -11,7 +11,7 @@
     </div>
     <div>
         <label for="price">Prix :</label>
-        <input type="number" id="price" name="price" step="1">
+        <input type="number" id="price" name="price" step="0.01">
     </div>
     <div>
         <label for="isActive">Actif :</label>

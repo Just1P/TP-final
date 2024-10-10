@@ -1,6 +1,6 @@
 <?
 
-class Products {
+class Product {
     private string $title;
 
     private float $price;
@@ -20,21 +20,37 @@ class Products {
 
     public static $DEFAULT_IS_ACTIVE_STATUS = false;
 
+    public function getTitle(): string {
+        return $this->title;
+    }
+
+    public function getDescription(): string {
+        return $this->description;
+    }
+
+    public function getPrice(): float {
+        return $this->price;
+    }
+
+    public function isActive(): bool {
+        return $this->isActive;
+    }
+
 
     public function __construct(string $title, string $description,?float $price = null, ?bool $isActive = null ){
-        if (strlen($title) < Products::$MIN_CHARAC || strlen($title) > Products::$MAX_CHARAC) {
+        if (strlen($title) < Product::$MIN_CHARAC || strlen($title) > Product::$MAX_CHARAC) {
             throw new Exception('Le titre doit contenir entre 3 et 100 caractères.');
         }
 
-        $this->price = $price ?? Products::$DEFAULT_PRICE;
+        $this->price = $price ?? Product::$DEFAULT_PRICE;
 
-        if ($this->price < Products::$MIN_PRICE || $this->price > Products::$MAX_PRICE) {
+        if ($this->price < Product::$MIN_PRICE || $this->price > Product::$MAX_PRICE) {
             throw new Exception('Le prix doit être compris entre 1€ et 500€.');
         }
 
         $this->title = $title;
         $this->description = $description;
-        $this->isActive = $isActive ?? Products::$DEFAULT_IS_ACTIVE_STATUS;
+        $this->isActive = $isActive ?? Product::$DEFAULT_IS_ACTIVE_STATUS;
 
     }   
 }

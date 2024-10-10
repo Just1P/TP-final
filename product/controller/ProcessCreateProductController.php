@@ -1,11 +1,11 @@
 <?php
 
-require_once './product/model/entity/Products.php';
+require_once './product/model/entity/Product.php';
 require_once './product/model/repository/ProductRepository.php';
 
-class CreateProductController {
+class ProcessCreateProductController {
 
-    public function createProduct() {
+    public function processCreateProduct(): void {
         try {
             if (!isset($_POST['title'])) {
                 $errorMessage = "Veuillez indiquer le titre du produit";
@@ -19,7 +19,7 @@ class CreateProductController {
             $price = isset($_POST['price']) ? floatval($_POST['price']) : null;
             $isActive = isset($_POST['isActive']) && $_POST['isActive'] === '1';
 
-            $product = new Products($title, $description, $price, $isActive);
+            $product = new Product($title, $description, $price, $isActive);
 
             $productRepository = new ProductRepository();
             $productRepository->persist($product);
