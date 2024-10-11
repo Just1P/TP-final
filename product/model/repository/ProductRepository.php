@@ -13,11 +13,16 @@ class ProductRepository {
         return $product;
     }
 
-    public function findAll(): ?array {
+    public function findActiveProducts(): ?array {
         if (!isset($_SESSION['products'])) {
             return [];
         }
-        return $_SESSION['products'] ?? [];
+
+        $activeProducts = array_filter($_SESSION['products'], function($product) {
+            return $product->isActive();
+        });
+        
+        return $activeProducts;
     }
     
 }

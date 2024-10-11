@@ -7,11 +7,7 @@ class ListProductsController
     public function showProductList()
     {
         $productRepository = new ProductRepository();
-        $products = $productRepository->findAll();
-
-        $activeProducts = array_filter($products, function($product) {
-            return $product->isActive();
-        });
+        $products = $productRepository->findActiveProducts();
 
         require_once './product/view/product-list.php';
     }
