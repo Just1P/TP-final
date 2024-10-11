@@ -10,15 +10,20 @@
             <?php foreach ($products as $product): ?>
                 <?php if ($product->isActive()): ?>
                     <li>
-                        <h2><?= htmlspecialchars($product->getTitle(), ENT_QUOTES) ?></h2>
-                        <p>Description : <?= htmlspecialchars($product->getDescription(), ENT_QUOTES) ?></p>
-                        <p>Prix : <?= htmlspecialchars(number_format($product->getPrice(), 2), ENT_QUOTES) ?> €</p>
+                        <h2><?= htmlspecialchars($product->getTitle(), ) ?></h2>
+                        <p>Description : <?= htmlspecialchars($product->getDescription(), ) ?></p>
+                        <p>Prix : <?= htmlspecialchars(number_format($product->getPrice(), 2), ) ?> €</p>
                         
                         <?php if (!empty($product->getId())): ?>
                             <form action="http://localhost:8888/esd-oop-php/add-to-cart" method="post">
-                                <input type="hidden" name="product_id" value="<?= htmlspecialchars($product->getId(), ENT_QUOTES) ?>">
+                                <input type="hidden" name="product_id" value="<?= htmlspecialchars($product->getId(), ) ?>">
                                 <button type="submit">Ajouter au panier</button>
                             </form>
+
+                            <form method="POST" action="http://localhost:8888/esd-oop-php/delete-product">
+                                <input type="hidden" name="product_id" value="<?= htmlspecialchars($product->getId(), ) ?>">
+                                <button type="submit">Supprimer</button>
+                        </form>
 
                         <?php else: ?>
                             <p>Impossible d'ajouter ce produit au panier.</p>

@@ -23,25 +23,25 @@
         <p>Votre panier est vide.</p>
     <?php else: ?>
         <h2>Adresse de livraison :</h2>
-        <?= htmlspecialchars($shippingAddress, ENT_QUOTES) ?><br>
-            <?= htmlspecialchars($shippingCity, ENT_QUOTES) ?><br>
-            <?= htmlspecialchars($shippingCountry, ENT_QUOTES) ?>
+        <?= htmlspecialchars($shippingAddress ) ?><br>
+            <?= htmlspecialchars($shippingCity) ?><br>
+            <?= htmlspecialchars($shippingCountry) ?>
 
         <h2>Méthode de livraison :</h2>
-        <p><?= htmlspecialchars($shippingMethod, ENT_QUOTES) ?></p>
+        <p><?= htmlspecialchars($shippingMethod, ) ?></p>
 
         <h2>Produits :</h2>
         <ul>
             <?php foreach ($cart as $product): ?>
                 <li>
-                    <h2><?= htmlspecialchars($product->getTitle(), ENT_QUOTES) ?></h2>
-                    <p>Description : <?= htmlspecialchars($product->getDescription(), ENT_QUOTES) ?></p>
-                    <p>Prix : <?= htmlspecialchars(number_format($product->getPrice(), 2), ENT_QUOTES) ?> €</p>
+                    <h2><?= htmlspecialchars($product->getTitle(), ) ?></h2>
+                    <p>Description : <?= htmlspecialchars($product->getDescription(), ) ?></p>
+                    <p>Prix : <?= htmlspecialchars(number_format($product->getPrice(), 2), ) ?> €</p>
                 </li>
             <?php endforeach; ?>
         </ul>
 
-        <p><strong>Total à payer : <?= htmlspecialchars(number_format($total, 2), ENT_QUOTES) ?> €</strong></p>
+        <p><strong>Total à payer : <?= htmlspecialchars(number_format($total, 2), ) ?> €</strong></p>
 
         <form method="POST" action="http://localhost:8888/esd-oop-php/process-payment" class="form">
             <button type="submit">Payer</button>

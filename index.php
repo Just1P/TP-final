@@ -15,6 +15,7 @@ require_once('./product/controller/CreateProductController.php');
 require_once('./product/controller/ProcessCreateProductController.php');
 require_once ('./product/controller/ListProductsController.php');
 require_once ('./product/controller/AddToCartController.php');
+require_once ('./product/controller/DeleteProductController.php');
 
 // Récupère l'url actuelle et supprime le chemin de base
 // c'est à dire : http://localhost:8888/esd-oop-php/public/
@@ -97,5 +98,11 @@ if ($endUri === "product-list") {
 if ($endUri === "add-to-cart") {
     $addToCartController = new AddToCartController();
     $addToCartController->addToCart();
+    return;
+}
+
+if ($endUri === "delete-product") {
+    $deleteProductController = new DeleteProductController();
+    $deleteProductController->deleteProduct();
     return;
 }
