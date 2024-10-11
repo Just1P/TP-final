@@ -1,5 +1,6 @@
 <?php
 
+
 class Order {
 
 	public static $CART_STATUS = "CART";
@@ -35,6 +36,8 @@ class Order {
 
 	public function __construct(string $customerName, array $products) {
 
+        $this->products = $this->getActiveProducts();
+
 		if (count($products) > Order::$MAX_PRODUCTS_BY_ORDER) {
 			throw new Exception("Vous ne pouvez pas commander plus de " . Order::$MAX_PRODUCTS_BY_ORDER . " produits");
 		}
@@ -50,6 +53,12 @@ class Order {
 		$this->customerName = $customerName;
 		$this->totalPrice = count($products) * Order::$UNIQUE_PRODUCT_PRICE;
 	}
+
+	private function getActiveProducts() {
+        return array_filter($_SESSION['products'] ?? [], function($product) {
+            return $product->isActive(); 
+        });
+    }
 
 
 
