@@ -2,8 +2,6 @@
 
 require_once './order/model/entity/Order.php'; 
 require_once './order/model/repository/OrderRepository.php';
-
-
 class ProcessShippingMethodController
 {
     public function processShippingMethod()

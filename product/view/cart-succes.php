@@ -2,8 +2,8 @@
 
     <main>
         <div class="message success">
-    Votre produit a bien été ajouté au panier !
-</div>
+                Votre produit a bien été ajouté au panier !
+        </div>
     </main>
 
 

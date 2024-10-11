@@ -14,7 +14,6 @@
                         <p>Description : <?= htmlspecialchars($product->getDescription(), ENT_QUOTES) ?></p>
                         <p>Prix : <?= htmlspecialchars(number_format($product->getPrice(), 2), ENT_QUOTES) ?> €</p>
                         
-                        <!-- Vérifier si le produit a bien un ID avant d'afficher le bouton -->
                         <?php if (!empty($product->getId())): ?>
                             <form action="http://localhost:8888/esd-oop-php/add-to-cart" method="post">
                                 <input type="hidden" name="product_id" value="<?= htmlspecialchars($product->getId(), ENT_QUOTES) ?>">

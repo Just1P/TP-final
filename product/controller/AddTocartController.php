@@ -7,8 +7,6 @@ class AddToCartController {
 
     public function addToCart(): void {
         try {
-
-
             $productId = $_POST['product_id'];
 
             $productRepository = new ProductRepository();

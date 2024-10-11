@@ -86,12 +86,9 @@ class Order {
         });
     }
 
-
-
 	private function calculateTotalCart():  float {
 		return count($this->products) * Order::$UNIQUE_PRODUCT_PRICE;
 	}
-
 
 	public function removeProduct(string $product) {
 		$this->removeProductFromList($product);
@@ -106,7 +103,6 @@ class Order {
 			unset($this->products[$key]);
 		}
 	}
-
 
 	public function addProduct(string $product): void {
 
@@ -160,7 +156,6 @@ class Order {
 		$this->shippingMethod = $shippingMethod;
 		$this->status = Order::$SHIPPING_METHOD_SET_STATUS;
 	}
-
 
 	public function pay(): void {
 		if ($this->status !== Order::$SHIPPING_METHOD_SET_STATUS) {

@@ -1,8 +1,6 @@
 <?php
 
 require_once './order/model/repository/OrderRepository.php';
-
-
 class SetShippingMethodController
 {
     public function setShippingMethod()

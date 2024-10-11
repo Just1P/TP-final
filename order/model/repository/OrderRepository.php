@@ -1,10 +1,7 @@
 <?php
 
 require_once './order/model/entity/Order.php';
-
-
 class OrderRepository {
-
 	// permet d'initialiser la session (session_start())
 	// à chaque fois qu'on instancie la classe OrderRepository
 	// sans l'initialisation de la session, on ne peut pas 
@@ -25,5 +22,4 @@ class OrderRepository {
 
 		return $_SESSION['order'];
 	}
-
 }

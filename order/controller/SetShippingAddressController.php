@@ -1,7 +1,6 @@
 <?php
 
 require_once './order/model/repository/OrderRepository.php';
-
 class SetShippingAddressController
 {
     public function setShippingAddress()

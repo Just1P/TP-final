@@ -3,7 +3,6 @@
 require_once './order/model/entity/Order.php';
 require_once './order/model/repository/OrderRepository.php';
 
-
 class CreateOrderController {
 
 	public function createOrder() {
@@ -30,10 +29,6 @@ class CreateOrderController {
 			$errorMessage = $e->getMessage();
 			require_once './order/view/order-error.php';
 		}
-
-
 	}
-
-
 }
 

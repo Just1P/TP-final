@@ -3,7 +3,6 @@
 	<main>
 		<p>Choisissez la méthode livraison : </p>
 
-
 		<form method="POST" action="http://localhost:8888/esd-oop-php/process-shipping-method">
 
 		<label for="shippingMethod">Méthode de livraison</label>

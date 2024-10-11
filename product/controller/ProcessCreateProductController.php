@@ -4,7 +4,6 @@ require_once './product/model/entity/Product.php';
 require_once './product/model/repository/ProductRepository.php';
 
 class ProcessCreateProductController {
-
     public function processCreateProduct(): void {
         try {
             if (!isset($_POST['title'])) {

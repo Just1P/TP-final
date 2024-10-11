@@ -1,9 +1,10 @@
 <?php require_once('./order/view/partials/header.php'); ?>
-<? $orderRepository = new OrderRepository();
-$order = $orderRepository->find(); ?>
+<? 
+$orderRepository = new OrderRepository(); 
+$order = $orderRepository->find();
+?>
 
 <main>
-
 		<form method="POST" action="http://localhost:8888/esd-oop-php/create-order">
 
 			<label for="customerName">Nom du client</label>
@@ -24,9 +25,7 @@ $order = $orderRepository->find(); ?>
 			<br>
 
 			<button type="submit">Ajouter</button>
-
 		</form>
-
 	</main>
 
 <?php require_once('./order/view/partials/footer.php'); ?>

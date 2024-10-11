@@ -2,8 +2,8 @@
 
     <main>
         <div class="message success">
-    Votre produit a été créée avec succès !
-</div>
+            Votre produit a été créée avec succès !
+        </div>
     </main>
 
 

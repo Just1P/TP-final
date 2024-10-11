@@ -7,7 +7,6 @@ class ProcessShippingAddressController
 {
     public function processShippingAddress()
     {
-       
         $orderRepository = new OrderRepository();
         $order = $orderRepository->find();
 
