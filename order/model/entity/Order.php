@@ -69,6 +69,12 @@ class Order {
 	public function getShippingAddress(): string {
 		return $this->shippingAddress;
 	}
+	public function getShippingCity(): string {
+		return $this->shippingCity;
+	}
+	public function getShippingCountry(): string {
+		return $this->shippingCountry;
+	}
 
 	public function getShippingMethod(): string {
 		return $this->shippingMethod;
