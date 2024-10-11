@@ -6,9 +6,6 @@ class DeleteProductController {
     
     public function deleteProduct(): void {
         try {
-            if (session_status() === PHP_SESSION_NONE) {
-                session_start();
-            }
 
             if (!isset($_POST['product_id'])) {
                 $errorMessage = "Aucun produit n'a été sélectionné pour la suppression.";
