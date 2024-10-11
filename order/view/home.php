@@ -13,14 +13,14 @@ $order = $orderRepository->find(); ?>
 			<label for="product">Produit</label>
 
 			<select id="product" name="products[]"">
-        <?php foreach ($_SESSION['products'] as $product): ?>
-            <?php if ($product->isActive()): ?>
-                <option value="<?php echo $product->getTitle(); ?>">
-                    <?php echo $product->getTitle() . ' - ' . $product->getPrice() . ' €'; ?>
-                </option>
-            <?php endif; ?>
-        <?php endforeach; ?>
-    </select>
+				<?php foreach ($_SESSION['products'] as $product): ?>
+					<?php if ($product->isActive()): ?>
+						<option value="<?php echo $product->getTitle(); ?>">
+							<?php echo $product->getTitle() . ' - ' . $product->getPrice() . ' €'; ?>
+						</option>
+					<?php endif; ?>
+				<?php endforeach; ?>
+    		</select>
 			<br>
 
 			<button type="submit">Ajouter</button>

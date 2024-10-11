@@ -66,6 +66,14 @@ class Order {
         return $this->totalPrice;
     }
 
+	public function getShippingAddress(): string {
+		return $this->shippingAddress;
+	}
+
+	public function getShippingMethod(): string {
+		return $this->shippingMethod;
+	}
+
 	private function getActiveProducts() {
         return array_filter($_SESSION['products'] ?? [], function($product) {
             return $product->isActive(); 

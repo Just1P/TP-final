@@ -1,7 +1,7 @@
 <?php require_once('./order/view/partials/header.php'); ?>
 	
 	<main>
-		<p>La méthode de livraison a bien été enregistrée</p>
+	<div class="message success">La méthode de livraison a bien été enregistrée</div>
 	</main>
 
 
