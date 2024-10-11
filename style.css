@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navigation Bar */
+header {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 0;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0 20px;
+  font-size: 1.5rem;
+}
+
+nav {
+  background: #3498db;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #5dade2;
+  color: #fff;
+  border-radius: 3px;
+}
+
+/* Formulaire centré */
+form {
+  background: #fff;
+  max-width: 400px; /* Limite la largeur du formulaire */
+  margin: 50px auto; /* Centre le formulaire horizontalement et ajoute un espace en haut */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+form button {
+  background-color: #3498db; /* Utilise la même couleur que la barre de navigation */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Le bouton prend toute la largeur */
+}
+
+form button:hover {
+  background-color: #5dade2; /* Version plus claire pour l'effet de survol */
+}
+
+/* Messages centrés */
+.message {
+  max-width: 400px; /* Limite la largeur pour éviter que le message prenne toute la largeur */
+  margin: 50px auto; /* Centre le message horizontalement et ajoute un espace au-dessus */
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Message de succès */
+.success {
+  background-color: #d4edda; /* Vert léger */
+  color: #155724; /* Vert foncé pour le texte */
+  border: 1px solid #c3e6cb; /* Bordure verte */
+}
+
+/* Message d'erreur */
+.error {
+  background-color: #f8d7da; /* Rouge léger */
+  color: #721c24; /* Rouge foncé pour le texte */
+  border: 1px solid #f5c6cb; /* Bordure rouge */
+}

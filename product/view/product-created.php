@@ -1,7 +1,9 @@
 <?php require_once('./order/view/partials/header.php'); ?>
 
     <main>
-        <p>Votre produit a été créé avec succès</p>
+        <div class="message success">
+    Votre produit a été créée avec succès !
+</div>
     </main>
 
 
