@@ -16,7 +16,7 @@ class ProcessCreateProductController {
 
             $title = $_POST['title'];
             $description = $_POST['description'];
-            $price = isset($_POST['price']) ? floatval($_POST['price']) : null;
+            $price = isset($_POST['price']) && $_POST['price'] !== '' ? floatval($_POST['price']) : null;
             $isActive = isset($_POST['isActive']) && $_POST['isActive'] === '1';
 
             $product = new Product($title, $description, $price, $isActive);

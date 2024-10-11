@@ -1,8 +1,7 @@
 <?php require_once('./order/view/partials/header.php'); ?>
-
-    <main>
-        <p>Votre produit a été créé avec succès</p>
-    </main>
-
+	
+	<main>
+		<p>Il y a eu une erreur : <?php echo $errorMessage; ?></p>
+	</main>
 
 <?php require_once('./order/view/partials/footer.php'); ?>
