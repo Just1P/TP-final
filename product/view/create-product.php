@@ -1,6 +1,6 @@
 <?php require_once('./order/view/partials/header.php'); ?>
 
-<form action="http://localhost:8888/esd-oop-php/process-create-product" method="POST">
+<form action="http://localhost:8888/esd-oop-php/process-create-product" method="POST" class="form">
     <div>
         <label for="title">Titre :</label>
         <input type="text" id="title" name="title" required>

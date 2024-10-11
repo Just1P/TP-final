@@ -5,7 +5,7 @@ $order = $orderRepository->find();
 ?>
 
 <main>
-		<form method="POST" action="http://localhost:8888/esd-oop-php/create-order">
+		<form method="POST" action="http://localhost:8888/esd-oop-php/create-order" class="form">
 
 			<label for="customerName">Nom du client</label>
 			<input type="text" id="customerName" name="customerName" required>

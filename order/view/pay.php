@@ -43,7 +43,7 @@
 
         <p><strong>Total à payer : <?= htmlspecialchars(number_format($total, 2), ENT_QUOTES) ?> €</strong></p>
 
-        <form method="POST" action="http://localhost:8888/esd-oop-php/process-payment">
+        <form method="POST" action="http://localhost:8888/esd-oop-php/process-payment" class="form">
             <button type="submit">Payer</button>
         </form>
     <?php endif; ?>
