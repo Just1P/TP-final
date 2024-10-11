@@ -54,6 +54,18 @@ class Order {
 		$this->totalPrice = count($products) * Order::$UNIQUE_PRODUCT_PRICE;
 	}
 
+	public function getCustomerName(): string {
+        return $this->customerName;
+    }
+
+    public function getProducts(): array {
+        return $this->products;
+    }
+
+    public function getTotalPrice(): float {
+        return $this->totalPrice;
+    }
+
 	private function getActiveProducts() {
         return array_filter($_SESSION['products'] ?? [], function($product) {
             return $product->isActive(); 

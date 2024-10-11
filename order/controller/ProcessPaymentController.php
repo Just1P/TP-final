@@ -10,6 +10,12 @@ class ProcessPaymentController
 
 		$orderRepository = new OrderRepository();
 		$order = $orderRepository->find();
+		
+		$_SESSION['last_order'] = [
+			'customerName' => $order->getCustomerName(),
+			'products' => $order->getProducts(),
+			'totalPrice' => $order->getTotalPrice(),
+		];
 
 		if (!$order) {
 			require_once './order/view/404.php';
