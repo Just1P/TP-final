@@ -1,6 +1,8 @@
 <?
 
 class Product {
+
+    private string $id;
     private string $title;
 
     private float $price;
@@ -35,6 +37,9 @@ class Product {
     public function isActive(): bool {
         return $this->isActive;
     }
+    public function getId(): string {
+        return $this->id ?? uniqid('', true);
+    }
 
 
     public function __construct(string $title, string $description,?float $price = null, ?bool $isActive = null ){
@@ -48,6 +53,7 @@ class Product {
             throw new Exception('Le prix doit être compris entre 1€ et 500€.');
         }
 
+        $this->id = uniqid('', true);
         $this->title = $title;
         $this->description = $description;
         $this->isActive = $isActive ?? Product::$DEFAULT_IS_ACTIVE_STATUS;

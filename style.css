@@ -49,10 +49,10 @@ nav ul li a:hover {
 }
 
 /* Formulaire centré */
-form {
+/*form {
   background: #fff;
-  max-width: 400px; /* Limite la largeur du formulaire */
-  margin: 50px auto; /* Centre le formulaire horizontalement et ajoute un espace en haut */
+  max-width: 400px; /* Limite la largeur du formulaire 
+  margin: 50px auto; /* Centre le formulaire horizontalement et ajoute un espace en haut
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -83,18 +83,18 @@ form select {
 }
 
 form button {
-  background-color: #3498db; /* Utilise la même couleur que la barre de navigation */
+  background-color: #3498db; /* Utilise la même couleur que la barre de navigation 
   color: white;
   padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 100%; /* Le bouton prend toute la largeur */
+  width: 100%; /* Le bouton prend toute la largeur 
 }
 
 form button:hover {
-  background-color: #5dade2; /* Version plus claire pour l'effet de survol */
-}
+  background-color: #5dade2; /* Version plus claire pour l'effet de survol 
+} */
 
 /* Messages centrés */
 .message {

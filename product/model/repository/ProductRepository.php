@@ -3,26 +3,25 @@
 require_once './product/model/entity/Product.php';
 
 class ProductRepository {
+    private array $products = [];
 
     public function __construct() {
         session_start();
-    }
-
-    public function persist(Product $product): Product {
-        $_SESSION['products'][] = $product;
-        return $product;
-    }
-
-    public function findActiveProducts(): ?array {
-        if (!isset($_SESSION['products'])) {
-            return [];
+        if (isset($_SESSION['products'])) {
+            $this->products = $_SESSION['products'];
         }
-
-        $activeProducts = array_filter($_SESSION['products'], function($product) {
-            return $product->isActive();
-        });
-        
-        return $activeProducts;
     }
-    
+
+    public function persist(Product $product): void {
+        $this->products[$product->getId()] = $product;
+        $_SESSION['products'] = $this->products;
+    }
+
+    public function findById(string $id): ?Product {
+        return $this->products[$id] ?? null;
+    }
+
+    public function findActiveproducts(): array {
+        return $this->products;
+    }
 }
